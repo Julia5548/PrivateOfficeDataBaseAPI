@@ -9,6 +9,6 @@ namespace PrivateOfficeDataBaseAPI.Models
         public string NameCourse { get; set; }
         public int IdTeacher { get; set; }
 
-        public virtual Teacher Teacher { get; set; }
+        
     }
 }

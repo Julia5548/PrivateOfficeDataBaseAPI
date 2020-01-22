@@ -7,7 +7,7 @@ namespace PrivateOfficeDataBaseAPI.Models
 
     {
         /*имя бд*/
-        public PrivateOfficeContext() : base("PrivateOffice") { }
+        public PrivateOfficeContext() : base(@"Server=(localdb)\mssqllocaldb;Database=PrivateOffice;Integrated Security=True") { }
         /*сущности модели*/
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Course> Courses { get; set; }

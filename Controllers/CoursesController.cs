@@ -32,6 +32,7 @@ namespace PrivateOfficeDataBaseAPI.Controllers
         {
             var course = await _context.Course.FindAsync(id);
 
+
             if (course == null)
             {
                 return NotFound();

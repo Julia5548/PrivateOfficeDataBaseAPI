@@ -23,7 +23,7 @@ namespace PrivateOfficeDataBaseAPI
             services.AddControllers();
 
             services.AddDbContext<PrivateOfficeDataBaseAPIContext>(options =>
-                    options.UseInMemoryDatabase("PrivateOffice"));
+                    options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PrivateOffice;Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
