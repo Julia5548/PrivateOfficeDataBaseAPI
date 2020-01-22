@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PrivateOfficeDataBaseAPI.Models;
+using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace PrivateOfficeDataBaseAPI.Data
 {
@@ -9,9 +10,10 @@ namespace PrivateOfficeDataBaseAPI.Data
             : base(options)
         {
         }
-
-        public DbSet<Teacher> Teacher { get; set; }
+        /*сущности модели*/
+		public DbSet<Teacher> Teacher { get; set; }
 
         public DbSet<Course> Course { get; set; }
-    }
+
+	}
 }
