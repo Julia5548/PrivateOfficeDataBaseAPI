@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrivateOfficeDataBaseAPI.Models
 {
@@ -6,8 +7,13 @@ namespace PrivateOfficeDataBaseAPI.Models
     {
         [Key]
         public int IdTeacher { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
+        public string Patronymic { get; set; }
+
+        public virtual Course Course { get; set; }
 
     }
 }

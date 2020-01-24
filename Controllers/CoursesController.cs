@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PrivateOfficeDataBaseAPI.Data;
@@ -31,7 +33,6 @@ namespace PrivateOfficeDataBaseAPI.Controllers
         public async Task<ActionResult<Course>> GetCourse(int id)
         {
             var course = await _context.Course.FindAsync(id);
-
 
             if (course == null)
             {
