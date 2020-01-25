@@ -19,15 +19,5 @@ namespace PrivateOfficeDataBaseAPI.Data
 
         
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Course>()
-                .HasOne(teacher => teacher.Teacher)
-                .WithMany(course => course.Course)
-                .HasForeignKey(course => course.IdTeacher);
-            
-                
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

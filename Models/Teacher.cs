@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrivateOfficeDataBaseAPI.Models
 {
@@ -14,7 +13,7 @@ namespace PrivateOfficeDataBaseAPI.Models
         public string SecondName { get; set; }
         public string Patronymic { get; set; }
 
-        public virtual List<Course> Course { get; set; }
+        //public virtual List<Course> Course { get; set; }
 
 
     }

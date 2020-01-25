@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PrivateOfficeDataBaseAPI.Data;
@@ -25,7 +23,7 @@ namespace PrivateOfficeDataBaseAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourse()
         {
-            return await _context.Course.ToListAsync();
+			return await _context.Course.ToListAsync();
         }
 
         // GET: api/Courses/5
@@ -38,8 +36,8 @@ namespace PrivateOfficeDataBaseAPI.Controllers
             {
                 return NotFound();
             }
-
-            return course;
+            
+			return course;
         }
 
         // PUT: api/Courses/5
