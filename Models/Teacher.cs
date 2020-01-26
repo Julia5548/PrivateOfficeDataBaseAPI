@@ -14,7 +14,7 @@ namespace PrivateOfficeDataBaseAPI.Models
         public string SecondName { get; set; }
         public string Patronymic { get; set; }
 
-        public virtual List<Course> Course { get; set; }
+        public virtual ICollection<Course> Course { get; set; }
 
 
     }

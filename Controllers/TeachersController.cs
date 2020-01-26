@@ -28,6 +28,24 @@ namespace PrivateOfficeDataBaseAPI.Controllers
             return await _context.Teacher.ToListAsync();
         }
 
+
+        // GET: api/Teachers/5
+        [HttpGet("GetTeacherDetails/{id}")]
+        public async Task<ActionResult<Teacher>> GetTeacherDetails(int id)
+        {
+            var teacher = _context.Teacher
+                .Include(course => course.Course)
+                .ThenInclude(classes => classes.Classes)
+                .FirstOrDefault(teacher => teacher.IdTeacher == id);
+
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+
+            return teacher;
+        }
+
         // GET: api/Teachers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Teacher>> GetTeacher(int id)

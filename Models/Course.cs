@@ -12,9 +12,9 @@ namespace PrivateOfficeDataBaseAPI.Models
         
         [ForeignKey("Teacher")]
         public int IdTeacher { get; set; }
-        public virtual Teacher Teacher { get; set; }
+        public Teacher Teacher { get; set; }
    
-        //public List<Classes> Classes { get; set; }
+        public List<Classes> Classes { get; set; }
 
 
     }

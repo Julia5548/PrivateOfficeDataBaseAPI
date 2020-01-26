@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using PrivateOfficeDataBaseAPI.Data;
 
 namespace PrivateOfficeDataBaseAPI
@@ -21,6 +23,11 @@ namespace PrivateOfficeDataBaseAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddNewtonsoftJson(opt => opt.SerializerSettings
+                    .ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
             services.AddDbContext<PrivateOfficeDataBaseAPIContext>(options =>
                     options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PrivateOffice;Integrated Security=True"));
